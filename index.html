@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="animate.js"></script>
+</head>
+<body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        position: absolute;
+        width: 200px;
+        top: 30%;
+        left: 50%;
+        line-height: 50px;
+    }
+
+    .box .col {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        z-index: 999;
+    }
+
+    .box .col span {
+        display: block;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .long {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #ff8500;
+        text-align: center;
+    }
+
+</style>
+<div class="box">
+    <div class="col"><span>👈</span></div>
+    <div class="long"><span>问题反馈</span></div>
+</div>
+<script>
+    var long = document.querySelector('.long');
+    var span = document.querySelector('span');
+    span.addEventListener('mouseenter', function () {
+        animate(long, -200);
+    })
+    span.addEventListener('mouseleave', function () {
+        animate(long, 0);
+    })
+    var span = document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    })
+</script>
+</body>
+</html>
